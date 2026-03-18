@@ -1,0 +1,124 @@
+body {
+    margin: 0;
+    font-family: 'Oswald', sans-serif;
+}
+
+.book {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cover {
+    width: 400px;
+    height: 600px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* BACKGROUND */
+.sky {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* CHURCH */
+.church {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    height: 300px;
+    width: 400px;
+    transform: translateX(-50%);
+    transition: 0.4s;
+}
+
+.church:hover {
+    filter: brightness(1.5) drop-shadow(0 0 20px #fff);
+    transform: translateX(-50%) scale(1.05);
+}
+
+.new-york-times {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 4px;
+    color: rgba(209, 199, 165, 1);
+}
+
+/* AUTHOR */
+.author-name {
+    position: absolute;
+    top: 60px;
+    text-align: center;
+    font-size: 50px;
+    letter-spacing: 10px;
+    color: rgba(84, 182, 229, 1);
+}
+
+.author-left, .author-right {
+    display: inline-block;
+    opacity: 0;
+}
+
+.author-left {
+    transform: translateX(-100%);
+    animation: slideInLeft 1.5s ease forwards;
+}
+
+.author-right {
+    transform: translateX(100%);
+    animation: slideInRight 1.5s ease forwards;
+}
+.author-left:nth-child(1) { animation-delay: 1.5s; } /* JULIA */
+.author-right:nth-child(2) { animation-delay: 2s; }   /* SPENCER- */
+.author-left:nth-child(3) { animation-delay: 2.5s; }  /* FLEMING */
+
+/* Animations */
+@keyframes fadeInTop {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-100%); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(100%); }
+    to { opacity: 1; transform: translateX(0); }
+}
+/* TITLE */
+.title {
+    position: absolute;
+    top: 280px;
+    width: 100%;
+    text-align: center;
+    font-size: 35px;
+    letter-spacing: 4px;
+    line-height: 60px;
+    color: white;
+    animation: titleFade 2s ease forwards;
+}
+
+/* Fade-in title */
+@keyframes titleFade {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
